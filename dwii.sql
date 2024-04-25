@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Abr-2024 às 03:03
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.1.12
+-- Tempo de geração: 26/04/2024 às 00:15
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `alunos`
+-- Estrutura para tabela `alunos`
 --
 
 CREATE TABLE `alunos` (
@@ -38,32 +38,32 @@ CREATE TABLE `alunos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `alunos`
+-- Despejando dados para a tabela `alunos`
 --
 
 INSERT INTO `alunos` (`id`, `nome`, `nascimento`, `email`, `telefone`, `sexo`, `curso`) VALUES
-(2, 'Gabriel', '2024-04-11', 'teste@gmail.com', '9999999999', 2, 'Análise e Desenvolvimento de Sistemas'),
-(3, 'Guilherme', '2024-04-23', 'teste2@gmailc.om', '88888888888', 2, 'Análise e Desenvolvimento de Sistemas');
+(1, 'Marco', '0000-00-00', 'marco.antoni@rolante.ifrs.edu.br', '56587687', 2, 'Análise e Desenvolvimento de Sistemas'),
+(2, 'Fernando', '1988-05-21', 'fernando@hotmail.com', '56587687', 2, 'Análise e Desenvolvimento de Sistemas');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `alunos`
+-- Índices de tabela `alunos`
 --
 ALTER TABLE `alunos`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
