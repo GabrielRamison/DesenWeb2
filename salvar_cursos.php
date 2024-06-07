@@ -1,11 +1,8 @@
 <?php
 
 	$nome = $_POST["nome"];
-	$nascimento = $_POST["nasc"];
-	$telefone = $_POST["tel"];
-	$sexo = $_POST["sexo"];
-	$curso = $_POST["curso"];
-	$email = $_POST["email"];
+	$descricao = $_POST["desc"];
+	$duracao = $_POST["dura"];
 
 	$erros = [];
 
@@ -13,24 +10,12 @@
 		$erros[] = "Nome está vazio";
 	}
 
-	if (empty($nascimento) ){
-		$erros[] = "O nascimento está vazio";
+	if (empty($descricao) ){
+		$erros[] = "A descrição está vazio";
 	}
 
-	if (empty($telefone)){
-		$erros[] = "O telefone está vazio";
-	}
-
-	if (empty($sexo) ){
-		$erros[] = "Preencha o campo sexo";
-	}
-
-	if (empty($curso) ){
-		$erros[] = "Preencha o curso";
-	}
-
-	if (empty($email) ){
-		$erros[] = "Preencha o email corretamente";
+	if (empty($duracao)){
+		$erros[] = "O campo duração está vazio";
 	}
 
 	if (count($erros) > 0) {
@@ -49,12 +34,12 @@
 			// conexão com o banco com sucesso
 
 			// monta a instrução sql a ser executada
-			$sql = "INSERT INTO alunos (nome, nascimento, email, telefone, sexo, curso) VALUES ('$nome', '$nascimento', '$email', '$telefone', $sexo, '$curso')";
+			$sql = "INSERT INTO cursos (nome, descricao, duracao) VALUES ('$nome', '$descricao', '$duracao')";
 
 			// mysqli_query executa a consulta sql
 			// se retornar true, a consulta foi executada com sucesso. Em caso de falha, retorna false
 			if (mysqli_query($conn, $sql) ){
-				echo ("Aluno inserido com sucesso");
+				echo ("Curso inserido com sucesso");
 			} else {
 				echo ("Houve um erro ao inserir o registro: <br> $sql");
 			}

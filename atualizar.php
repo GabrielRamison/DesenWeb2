@@ -6,6 +6,7 @@
 	$sexo = $_POST["sexo"];
 	$curso = $_POST["curso"];
 	$email = $_POST["email"];
+    $id = $_POST["id"];
 
 	$erros = [];
 
@@ -49,12 +50,14 @@
 			// conexão com o banco com sucesso
 
 			// monta a instrução sql a ser executada
-			$sql = "INSERT INTO alunos (nome, nascimento, email, telefone, sexo, curso) VALUES ('$nome', '$nascimento', '$email', '$telefone', $sexo, '$curso')";
+			$sql = "UPDATE alunos SET nome = '$nome', nascimento = '$nascimento', 
+            email = '$email', telefone = '$telefone', sexo = $sexo, curso = '$curso'
+            WHERE id = $id";
 
 			// mysqli_query executa a consulta sql
 			// se retornar true, a consulta foi executada com sucesso. Em caso de falha, retorna false
 			if (mysqli_query($conn, $sql) ){
-				echo ("Aluno inserido com sucesso");
+				echo ("Aluno atualizado com sucesso");
 			} else {
 				echo ("Houve um erro ao inserir o registro: <br> $sql");
 			}
